@@ -1,0 +1,57 @@
+#lottery_gif{
+	width:1400px;
+	height:380px;
+}
+
+#lottery_gif:hover{
+    cursor:pointer;
+}
+
+#lottery_body{
+	width:1400px;
+	height:380px;
+}
+
+#ball_board{
+	width:1400px;
+	height:300px;
+	background-color:green;
+	border-radius:8px;
+	border:2px solid gray; 
+}
+
+.ball_box{
+	position:relative;
+	float:left;
+	margin-top:30px;
+	margin-left:45px;
+	width: 220px;
+	height:220px;
+}
+
+.showwhiteball{
+	position: absolute;
+	z-index: 100;
+	top:20px;
+	left:20px;
+}
+
+#selector1{
+    margin-left:100px;
+}
+
+.selector{
+	width:120px;
+	height:50px;
+	margin-left:140px;
+	font-size: 30px;
+	text-align: center;
+}
+
+#rollbtn{
+	margin-left:630px !important;
+}
+
+#closelotterybtn{
+	margin-left:410px !important;
+}

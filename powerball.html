@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/powerball.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.0.js"></script>
+    <script type="text/javascript" src="scripts/powerball.js"></script>
+	<title>powerball</title>
+</head>
+
+<body ng-controller="myCtrl">
+    <div id="lottery_gif" ng-show="lotteryswitch1"><img src="images/lottery.gif" ng-click="showlotteryboard(false)"/></div>
+        <div id="lottery_body" ng-show="lotteryswitch2">
+        <div id="ball_board">
+            <div class="ball_box"><img src="images/Ballbox.png" style="width:100%"><img class="showwhiteball" src="images/W{{selectedWhiteball1.num}}.png" style="width:80%"></div>
+            <div class="ball_box"><img src="images/Ballbox.png" style="width:100%"><img class="showwhiteball" src="images/W{{selectedWhiteball2.num}}.png" style="width:80%"></div>
+            <div class="ball_box"><img src="images/Ballbox.png" style="width:100%"><img class="showwhiteball" src="images/W{{selectedWhiteball3.num}}.png" style="width:80%"></div>
+            <div class="ball_box"><img src="images/Ballbox.png" style="width:100%"><img class="showwhiteball" src="images/W{{selectedWhiteball4.num}}.png" style="width:80%"></div>
+            <div class="ball_box"><img src="images/Ballbox.png" style="width:100%"><img class="showwhiteball" src="images/W{{selectedWhiteball5.num}}.png" style="width:80%"></div>
+            <button id="rollbtn" class="btn btn-info" ng-click="randompick()">Roll Balls</button>
+                        <button id="closelotterybtn" class="btn btn-success" ng-click="showlotteryboard(true)">Close</button>
+        </div>
+            <select class="selector" ng-model="selectedWhiteball1" ng-options="x.num for x in whiteball1|filter:selectedWhiteball2:not|filter:selectedWhiteball3:not|filter:selectedWhiteball4:not|filter:selectedWhiteball5:not" id="selector1" ng-click="selector1dirty()"></select>
+            <select class="selector" ng-model="selectedWhiteball2" ng-options="x.num for x in whiteball2|filter:selectedWhiteball1:not|filter:selectedWhiteball3:not|filter:selectedWhiteball4:not|filter:selectedWhiteball5:not" ng-click="selector2dirty()"></select>
+            <select class="selector" ng-model="selectedWhiteball3" ng-options="x.num for x in whiteball3|filter:selectedWhiteball1:not|filter:selectedWhiteball2:not|filter:selectedWhiteball4:not|filter:selectedWhiteball5:not" ng-click="selector3dirty()"></select>
+            <select class="selector" ng-model="selectedWhiteball4" ng-options="x.num for x in whiteball4|filter:selectedWhiteball1:not|filter:selectedWhiteball2:not|filter:selectedWhiteball3:not|filter:selectedWhiteball5:not" ng-click="selector4dirty()"></select>
+            <select class="selector" ng-model="selectedWhiteball5" ng-options="x.num for x in whiteball5|filter:selectedWhiteball1:not|filter:selectedWhiteball2:not|filter:selectedWhiteball3:not|filter:selectedWhiteball4:not" ng-click="selector5dirty()"></select>
+        </div>
+</body>
+</html>
